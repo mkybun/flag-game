@@ -21,17 +21,22 @@
   text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  height: 100vh;
 }
 
-body {
-  background-color: rgb(49, 50, 51);
-}
 
 .title {
-  font-size: 3em;
+  font-size: 5em;
   text-shadow: 2px 2px 5px black;
   color: rgb(196, 231, 255);
-  
+  margin-top: 4vh;
+}
+
+.sub-title {
+  font-size: 1.5em;
+  text-shadow: 2px 2px 5px black;
+  color: rgb(196, 231, 255);
 }
 
 .flag-img {
@@ -47,9 +52,11 @@ body {
   display: flex;
   background-color: rgb(44, 43, 51);
   flex-direction: column;
+  max-height: 300vh;
   width: 70vh;
+  border: none;
+  overflow-y: auto;
   z-index: 1;
-
 }
 
 .bottom-btns {
@@ -67,17 +74,49 @@ body {
 #right-side {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   width: 200vh;
+  max-height: 100vh;
   margin-bottom: 3vh;
   padding-bottom: 3vh;
 } 
 
 .correct-ans-text {
   font-size: 1.7em;
-  color: rgb(230, 213, 213);
+  color: rgb(214, 221, 255);
+  margin: 15px;
 }
 
 .timer {
-  font-size: 1.8em;
-  color: rgb(230, 213, 213);
+  font-size: 2em;
+  color: rgb(214, 221, 255);
+  margin: 3vh;
+}
+
+.correct-text {
+  font-size: 1.5em;
+  color: rgb(214, 221, 255);
+}
+
+.collapsible-header {
+  font-size: 1.2em;
+text-align: center;
+}
+
+#list {
+  background-color: rgb(86, 83, 102);
+  border-radius: 3px;
+  text-align: center;
+  color: aliceblue;
+
+}
+
+#more-info {
+  background-color: gray;
+  border-radius: 3px;
+  text-align: center;
+}
+
+fieldset {
+  border: none;
 }

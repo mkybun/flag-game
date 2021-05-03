@@ -16,6 +16,7 @@ class App extends React.Component {
       background: { backgroundColor: 'lightslategray' },
       currentCorrect: [],
       capital: [],
+      disabled: false,
       // languages: '',
       // capital: '',
     };
@@ -107,17 +108,17 @@ class App extends React.Component {
   
         <div className = "correct-list-outer">
         <ul className='collapsible'>
-          <p>Your Correct Guesses:</p>
+          <p className = 'correct-text'>Your Correct Guesses:</p>
           
         {this.state.currentCorrect.map((current) => {
           return (
             <li key={randomFlag.id}>
 
-              <div className="collapsible-header">{current}</div>
+              <div id='list' className="collapsible-header">{current}</div>
 
               {this.state.capital.map((currentCapital) => {
                 return (
-                  <p className="collapsible-body"> <span>Capital: {currentCapital}</span></p>
+                  <p id = "more-info" className="collapsible-body"> <span>Capital: {currentCapital}</span></p>
                 )
               })}
            
@@ -131,15 +132,21 @@ class App extends React.Component {
 
         
         <div id="right-side">
-          <h1 className = "title">How Many Countries Can You Guess In 1 Minute?</h1>
-          <h2 className="timer">Time Remaining: {countdown > 0 ? countdown : "Time's Up!"}</h2>
+
+          <p className = "title">Guess That Flag!</p>
+            <p className="sub-title">How Many Countries Can You Guess In 1 Minute?</p>
+          
+          <p className="timer">Time Remaining: {countdown > 0 ? countdown : "Time's Up!"}</p>
           <div>
         <img
           className="flag-img"
           alt="randomFlag"
           src={randomFlag.flag}
-        /> 
+            /> 
           </div>
+
+
+          <fieldset disabled = {countdown < 0 ? true : false}>
           <div className = "bottom-btns">
             <button
               id="randomize"
@@ -174,12 +181,12 @@ class App extends React.Component {
           {this.state.randomOpt[3]}
           </button>
           </div>
-          
+          </fieldset>
       
 
        
           
-        <h2 className = "correct-ans-text">Number of Correct Answers: {correctAnswers}</h2>
+        <p className = "correct-ans-text">Number of Correct Answers: {correctAnswers}</p>
 
         <div className ="top-btns">
         <button
