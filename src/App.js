@@ -17,8 +17,6 @@ class App extends React.Component {
       currentCorrect: [],
       capital: [],
       disabled: false,
-      // languages: '',
-      // capital: '',
     };
     this.randomFlag = this.randomFlag.bind(this);
     this.isCorrect = this.isCorrect.bind(this);
@@ -70,12 +68,7 @@ class App extends React.Component {
         background: { backgroundColor: 'mediumseagreen' },
         currentCorrect: [...this.state.currentCorrect, this.state.randomFlag.name],
         capital: [...this.state.capital, this.state.randomFlag.capital],
-        // language: this.state.randomFlag.languages,
-        // capital: this.state.randomFlag.capital
       });
-      console.log(this.state.currentCorrect)
-      console.log(this.state.capital)
-      console.log(this.randomFlag.capital)
       this.randomFlag();
     } else {
       this.setState({
@@ -186,7 +179,7 @@ class App extends React.Component {
 
        
           
-        <p className = "correct-ans-text">Number of Correct Answers: {correctAnswers}</p>
+        <p className = "correct-ans-text">You've Gotten {correctAnswers} correct!</p>
 
         <div className ="top-btns">
         <button
