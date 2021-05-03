@@ -12,7 +12,7 @@ class App extends React.Component {
       randomOpt: [],
       correctAnswers: 0,
       winner: '',
-      countdown: 10,
+      countdown: 60,
       background: { backgroundColor: 'lightslategray' },
       currentCorrect: [],
       capital: [],
@@ -132,7 +132,14 @@ class App extends React.Component {
         
         <div id="right-side">
           <h1 className = "title">How Many Countries Can You Guess In 1 Minute?</h1>
-          <h2 className="timer">Time: {countdown > 0 ? countdown : 'time is up!'} </h2>
+          <h2 className="timer">Time Remaining: {countdown > 0 ? countdown : "Time's Up!"}</h2>
+          <div>
+        <img
+          className="flag-img"
+          alt="randomFlag"
+          src={randomFlag.flag}
+        /> 
+          </div>
           <div className = "bottom-btns">
             <button
               id="randomize"
@@ -170,13 +177,7 @@ class App extends React.Component {
           
       
 
-        <div>
-        <img
-          className="flag-img"
-          alt="randomFlag"
-          src={randomFlag.flag}
-        /> 
-          </div>
+       
           
         <h2 className = "correct-ans-text">Number of Correct Answers: {correctAnswers}</h2>
 
